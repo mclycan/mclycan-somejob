@@ -1,0 +1,435 @@
+bitcoind stop
+sudo cp -r -a /root/.bitcoin/* ~/.bitcoin/
+sudo ls /root
+sudo cp -r -a /root/.bitcoin/ ~/.bitcoin/
+bitcoind
+ls
+ll .bitcoin/
+ll .bitcoin/blocks/
+rm -rf .bitcoin/
+sudo rm -rf .bitcoin/
+sudo cp -r -a /root/.bitcoin/ ~/.bitcoin
+ls
+ll .bitcoin/
+chmod help
+chmod --help
+chusr --help
+chown --help
+chown -R bitbank:bitbank .bitcoin
+sudo chown -R bitbank:bitbank .bitcoin
+ll .bitcoin/
+bitcoind
+cd .bitcoin/
+ls
+bitcoind getblockcount
+ps -ef | grep bitcoin
+sudo apt-get update
+sudo apt-get install mysql-server
+sudo vi /etc/mysql/my.cnf
+sudo service mysql restart
+git clone git@bitbucket.org:bitbank_bither/bither_api_base.git bither_api
+ls
+rm -rf bither_api/
+vi tmp.sh 
+rm tmp.sh 
+/bin/bash -l -c "cd work/git/bither_api/apps && cp -r -a bitcoin/* ../../../bither_api/apps/bitcoin/"
+cd work/git/bither_api/apps
+cd work/
+ls
+cd bither_api/
+ls
+cd ..
+cd git/
+ls
+cd bither_api/
+ls
+cd ..
+rm -rf bither_api/
+cd ../bither_api/
+python -c "print '\n====================\nbase version:' + __import__('__init__', fromlist=['']).__version__ + '\nbitcoin version:' + __import__('apps.bitcoin', fromlist=['']).__version__ + '\nmonitor version:' + __import__('apps.monitor', fromlist=['']).__version__ + '\nmempool version:' + __import__('apps.mempool', fromlist=['']).__version__ + '\n===================='"
+ls
+vi __init__.py
+python -c "print '\n====================\nbase version:' + __import__('__init__', fromlist=['']).__version__ + '\nbitcoin version:' + __import__('apps.bitcoin', fromlist=['']).__version__ + '\nmonitor version:' + __import__('apps.monitor', fromlist=['']).__version__ + '\nmempool version:' + '\n===================='"
+ls
+source ~/.virtualenvs/bither_api/bin/activate
+fab parse_and_import
+screen
+screen -ls
+screen -r 31450
+df -hl
+sudo ls /root/.bitcoin
+sudo rm -rf /root/.bitcoin
+df -hl
+bitcoind getblockcount
+df -hl
+screen -r 31450
+df -hl
+screen -r 31450
+ll .bitcoin/blocks/ | grep blk | tail -f
+ll .bitcoin/blocks/ | grep blk | tail -1
+screen -r 31450
+df -hl
+screen -r 31450
+df -hl
+screen -r 31450
+df -hl
+screen -r 31450
+history
+screen -r 31450
+crontab -e
+sudo service cron restart
+cd work/bither_api/
+ls
+sudo ls /etc/supervisor/conf.d/
+sudo cp apps/monitor/conf/supervisor.conf /etc/supervisor/conf.d/monitor.conf
+sudo vi /etc/supervisor/conf.d/monitor.conf 
+sudo service supervisor restart
+crontab -l
+curl http://127.0.0.1:8822/api/v1/monitor/bid/1/token
+sudo vi /etc/nginx/conf.d/bitcoin.conf 
+sudo nginx -s reload
+mysql -u bither_api -p bither_api
+bitcoind getblockcount
+mysql -u bither_api -p bither_api
+bitcoind getblockcount
+df -hl
+ls
+=======================================================================================================================================================================================
+rvm
+sudo apt-get install git mysql-server libmysqlclient-dev libmysqld-dev supervisor memcached
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+curl -sSL https://get.rvm.io | bash -s stable
+source ~/.rvm/scripts/rvm
+#rvm install ruby 2.1.5
+#sudo rvm install ruby 2.1.5
+/etc/apt/sources.list
+sudo vi /etc/apt/sources.list
+rvm list
+rvm requirements
+sudo apt-get update
+ps -ef | grep apt-get
+vi  /var/lib/apt/lists/lock
+sudo ls  /var/lib/apt/lists/lock
+sudo ls =al  /var/lib/apt/lists/lock
+sudo ls -al  /var/lib/apt/lists/lock
+sudo apt-get update
+ps aux | grep apt | grep -v 'grep'
+sudo kill 524
+sudo kill 525
+sudo apt-get update
+ps aux | grep apt | grep -v 'grep'
+sudo rm /var/lib/apt/lists/lock
+sudo apt-get update
+rvm install ruby 2.1.5
+apt-get -f install
+sudo apt-get -f install
+mysql -u bither_api -p bither_api
+rvm install ruby 2.1.5
+rvm --default use 2.1.5
+gem install rails -v 4.1.6
+mysql -u root -p
+cd coingo/
+ls
+rvm
+rvm install rake
+rake
+ls
+cd current
+rake db:migrate
+rvm install rake
+bundle install
+rake
+gem install rake
+rake db:migrate
+rake db:seed
+rake db:migrate
+rake db:create
+mysql -u coingo -p coingo
+rake db:create
+mysql -u coingo -p 
+mysql -u root -p 
+rake db:create
+mysql -u root -p 
+rake db:create
+rake db:migrate
+mysql -u coingo -p coingo
+rake db:schema:load
+rake db:seed
+mysql -u coingo -p coingo
+rake db:schema:load
+ls
+ll db/seeds.rb 
+ll db/schema.rb 
+vi db/schema.rb 
+lsrake db:schema:load
+rake db:schema:load
+rake db:seed
+rake secret
+vi ~/.bash_profile
+source ~/.bash_profile 
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7
+sudo vi /etc/apt/sources.list.d/passenger.list
+sudo chown root: /etc/apt/sources.list.d/passenger.list
+sudo chmod 600 /etc/apt/sources.list.d/passenger.list
+sudo apt-get update
+sudo apt-get install nginx-extras passenger
+git clone git@bitbucket.org:bither/coingo.git
+ls
+ll coingo/
+mkdir tmp
+cd tmp/
+git clone git@bitbucket.org:bither/coingo.git
+ls
+cat ~/.ssh/id_rsa.pub 
+git clone https://bitwolaiye@bitbucket.org/bither/coingo.git
+git pull
+cd coingo/
+git pull
+cat ~/.ssh/id_rsa.pub 
+cd ~/.ssh/
+ls
+mv id_rsa id_rsa.2
+mv id_rsa.pub id_rsa.pub.2
+ssh-keygen -t rsa
+cat id_rsa.pub
+cat id_rsa.pub | pbcopy
+cd ..
+ls
+rm -rf tmp
+cd coingo/
+ls
+cd current
+vi config/database.yml
+rake db:migrate
+rvm install rake
+sudo apt-get install passenger
+/usr/bin/passenger-config --root
+rvm use 2.1.5
+/usr/bin/passenger-config --ruby-command | grep Nginx
+sudo vi /etc/nginx/nginx.conf
+/usr/bin/passenger-config --ruby-command | grep Nginx # get passenger_ruby
+sudo vi /etc/nginx/nginx.conf
+cd coingo/current
+sudo cp conf/nginx.conf /etc/nginx/conf.d/coingo.conf
+sudo vi /etc/nginx/conf.d/coingo.conf
+sudo service nginx restart
+curl http://127.0.0.1/
+ngix -v
+ngix -V
+sudo apt-get install nginx-extras
+sudo service nginx restart
+nginx
+nginx -t
+sudo nginx -t
+/usr/bin/passenger-config --ruby-command | grep Nginx # get passenger_ruby
+sudo vi /etc/nginx/nginx.conf 
+/home/bitbank/.rvm/gems/ruby-2.1.5/wrappers/ruby -v
+sudo nginx -t
+sudo apt-get install nginx-extras
+passenger -v
+sudo apt-get install nginx-extras
+sudo apt-get install perlapi
+sudo apt-get install nginx-extras
+sudo apt-get reinstall nginx
+sudo apt-get uninstall nginx
+sudo apt-get remove nginx
+sudo apt-get install nginx-extras
+nginx-extras
+sudo apt-get install apt-transport-https ca-certificates
+sudo apt-get install nginx-extras
+vi /etc/apt/sources.list.d/passenger.list
+sudo vi /etc/apt/sources.list.d/passenger.list
+sudo apt-get update
+sudo apt-get install nginx-extras
+nginx
+ll /etc/nginx/
+sudo apt-get autoremove
+ll /etc/nginx/
+sudo apt-get install nginx-extras
+cat /etc/issue
+sudo vi /etc/apt/sources.list.d/passenger.list
+sudo apt-get update
+sudo apt-get install nginx-extras
+sudo apt-get install libperl5.18
+sudo apt-get install libperl
+sudo apt-get install perl-base
+sudo apt-get install nginx-extras
+sudo apt-get install libperl
+sudo apt-get install libperl5.18
+sudo rm /etc/apt/sources.list.d/passenger.list
+sudo apt-get update
+sudo apt-get install nginx-extras
+sudo nginx -s reload
+sudo vi /etc/apt/sources.list.d/passenger.list
+sudo apt-get update
+sudo apt-get install passenger
+sudo nginx -s reload
+sudo apt-get install passenger-install-nginx-module
+sudo nginx remove nginx-extras
+sudo apt-get remove nginx-extras
+sudo apt-get install nginx-extras
+wget http://launchpadlibrarian.net/179647718/perl-base_5.18.2-6_i386.deb
+sudo dpkg -i perl-base_5.18.2-6_i386.deb 
+ls
+rm perl-base_5.18.2-6_i386.deb 
+wget perl-base_5.18.2-4_amd64.deb
+wget http://launchpadlibrarian.net/177077701/perl-base_5.18.2-4_amd64.deb
+sudo dpkg -i perl-base_5.18.2-4_amd64.deb 
+sudo apt-get install nginx-extra
+sudo apt-get install nginx-extras
+sudo apt-get remove nginx-extras
+gem install passenger
+sudo apt-get remove nginx nginx-full nginx-light nginx-naxsi nginx-common
+sudo apt-get -f install
+sudo apt-get remove nginx nginx-full nginx-light nginx-naxsi nginx-common
+passenger-install-nginx-module
+sudo  apt-get install libcurl4-openssl-dev or libcurl4-gnutls-dev
+sudo  apt-get install libcurl4-openssl-dev
+passenger-install-nginx-module
+which ruby
+rvmsudo -H bash
+cd coingo/current
+ls
+vi log/production.log 
+vi log/development.log 
+vi /opt/nginx/logs/error.log 
+ls
+vi config/secrets.yml
+vi /opt/nginx/logs/error.log 
+vi ~/.bash_profile 
+source ~/.bash_profile 
+sudo /opt/nginx/sbin/nginx -s reload
+su
+su 
+rake secret
+ls
+vi config/secrets.yml 
+which nginx
+ln -s /opt/nginx/sbin/nginx /usr/bin/nginx
+sudo ln -s /opt/nginx/sbin/nginx /usr/bin/nginx
+sudo nginx -s reload
+mysql -u coingo -p coingo
+ps -ef| grep memcache
+cd ~/work/bither_api/
+./task.sh exchange ticker
+./task.sh exchange currency_rate
+cd ~/coingo/current
+vi log/production.log 
+cd ~/work/
+ls
+mkdir bither_daemon
+cd bither_daemon/
+ls
+ln -s bither-desktop-enterprise-0.0.8.jar bither-desktop-enterprise.jar 
+sudo apt-get update
+sudo apt-get install openjdk-7-jre-headless
+sudo vi /etc/supervisor/conf.d/bither_daemon.conf
+sudo service supervisor restart
+cd work/bither_daemon/
+python bitherd.py initaccount bither http://139.162.11.48
+python bitherd.py addprivatekey 3 bither
+cd ..
+ls
+cd coingo/
+cd current
+ls
+vi app/views/layouts/shared/_navigation.html.slim 
+vi app/views/layouts/shared/_navigation_admin.html.slim 
+sudo nginx -s reload
+bitcoind getrawtransaction 6282dca5b1f3044fd0bbf2fe521485283deb988b5bc0c39a0f36022a4d26608e
+cd ~/work/bither_api/
+./task.sh monitor mempool_sync
+vi ~/.bitcoin/bitcoin.conf 
+vi ~/.virtualenvs/bither_api/bin/activate
+./task.sh monitor mempool_sync
+source ~/.virtualenvs/bither_api/bin/activate
+vi apps/mempool/models.py
+python
+mysql -u bither_api -p bither_api
+python
+./task.sh monitor mempool_sync
+ls
+vi mempool_sync.pid 
+ps -ef | grep 26884
+rm mempool_sync.pid 
+./task.sh monitor mempool_sync
+mysql -u bither_api -p bither_api
+vi ~/.virtualenvs/bither_api/bin/activate
+sudo supervisorctl restart monitor_api1 monitor_api2
+mysql -u bither_api -p bither_api
+curl -X POST http://127.0.0.1/bitcoin/send_tx -d ""
+curl -X POST http://api/v1/monitor/tx/notify -d ""
+curl -X POST http://127.0.0.1/api/v1/monitor/tx/notify -d ""
+./task.sh monitor sync
+cd ~/work/bither_daemon/
+python bitherd.py listaddress
+python bitherd.py exportprivatekey bither
+curl -X POST http://127.0.0.1/bitcoin/send_tx -d ""
+crontab -e
+sudo service cron restart
+mysql -u coingo -p coingo
+curl -X POST http://127.0.0.1/bitcoin/send_tx -d ""
+mysql -u coingo -p coingo
+cd work/bither_daemon/
+python bitherd.py getbalance
+cd ~/coingo/current
+ls
+vi config/settings.yml 
+sudo nginx -s reload
+curl -X POST http://127.0.0.1/bitcoin/send_tx -d ""
+cd ~/work/bither_daemon/
+python bitherd.py getbalance
+curl -X POST http://127.0.0.1/bitcoin/send_tx -d ""
+cd ~/coingo/current
+ls
+vi app/views/layouts/application.html.slim 
+sudo nginx -s reload
+df -hl
+du -hl . max-depth=1
+du -hl . -max-depth=1
+du --help
+du -hl . --max-depth=1
+du -hl /etc --max-depth=1
+du -hl /var --max-depth=1
+sudo du -hl /var --max-depth=1
+ll .bitcoin/
+du -hl .bitcoin --max-depth=1
+ll .bitcoin/
+ll .bitcoin/blocks
+sudo du -hl /var --max-depth=1
+sudo grep CRON /var/log/syslog | grep notify
+mysql -u bither_api -p bither_api
+cd work/bither_api
+vi updating_project
+ll | grep .pid
+tail -f log/explorer.log 
+df -hl
+mysql -u bither_api -p bither_api
+rm updating_project 
+./task.sh monitor sync
+vi apps/monitor/explorer.py
+./task.sh monitor sync
+vi apps/bitcoin/explorer.py
+./task.sh monitor sync
+vi apps/bitcoin/explorer.py
+./task.sh monitor sync
+mysql -u bither_api -p bither_api
+vi ~/.virtualenvs/bither_api/bin/activate
+
+bitcoind getrawmempoo | grep 92f16048df6d91ff287fff6baa227e2521ffa752cfb53c828ce86806193e0c2a
+bitcoind getrawmempool | grep 92f16048df6d91ff287fff6baa227e2521ffa752cfb53c828ce86806193e0c2a
+mysql -u bither_api -p bither_api
+bitcoind getrawmempool > 1.json
+vi 1.json 
+bitcoind getblockcount
+mysql -u bither_api -p bither_api
+curl http://127.0.0.1:8821/api/v1/monitor
+curl http://127.0.0.1:8821/api/v1/monitor/bid/1LTHVGorrVBLfeESnJUHtFNnuTKZ5Hn5zZ/balance
+mysql -u bither_api -p bither_api
+curl -X POST -d "token=4c9b9c70b2758f3451de90536c8e9302ee75c753fc6382aad0439008eced53e9" http://127.0.0.1:8821/api/v1/monitor/bid/1LTHVGorrVBLfeESnJUHtFNnuTKZ5Hn5zZ/balance
+mysql -u bither_api -p bither_api
+sudo supervisor restart monitor_api1 monitor_api2
+sudo supervisorctl restart monitor_api1 monitor_api2
+curl -X POST -d "token=4c9b9c70b2758f3451de90536c8e9302ee75c753fc6382aad0439008eced53e9" http://127.0.0.1:8821/api/v1/monitor/bid/1LTHVGorrVBLfeESnJUHtFNnuTKZ5Hn5zZ/balance
+mysql -u bither_api -p bither_api
+sudo supervisorctl restart monitor_api1 monitor_api2
