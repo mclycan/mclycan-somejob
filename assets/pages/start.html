@@ -32,42 +32,41 @@
 				</div>
 <!--  ========================================================================   -->
 <!--  +++++++++++++++++++++++++++DO SOMTHING HERE+++++++++++++++++++++++++++++   -->
-<form role="form">
+<form action="extract.php" enctype="multipart/form-data" method="post" role="form">
 <div style="padding: 0px 420px 0px;">
 <div class="form-group">
      <input type="file" id="inputfile">
 </div>
 </div>
-</form>
+<!--  </form> -->
 
 <div style="padding: 0px 200px 0px;">
-   <form role="form">
+   <!-- <form role="form"> -->
       <div class="input-group input-group-lg">
          <span class="input-group-addon">E-mail</span>
-         <input type="text" class="form-control" placeholder="We will contact you with e-mail when work is done...">
+         <input type="text" name="usermail" class="form-control" placeholder="We will contact you with e-mail when work is done...">
       </div><br>
 </div>
-</form>
+<!-- </form> -->
 
 <div style="padding: 0px 200px 0px;">
-   <form role="form">
+  <!-- <form role="form"> -->
       <div class="input-group input-group-lg">
          <span class="input-group-addon">Prefix</span>
-         <input type="text" class="form-control" placeholder="Entry your Prefix...">
+         <input type="text" name="userpre" class="form-control" placeholder="Entry your Prefix...">
          <span class="input-group-addon">Suffix</span>
-         <input type="text" class="form-control" placeholder="Entry your Suffix...">
+         <input type="text" name="usersuf" class="form-control" placeholder="Entry your Suffix...">
       </div><br>
 </div>
-</form>
 
-<h4><a href="submit.html" class="btn btn-default btn-lg">LET THE SHOW BEGIN</a>  <a href="task-info.html" class="btn btn-default btn-lg">SEE MORE INFOMATION</a></h4>
-
+<h4><a type="submit" name="submit" href="submit.html" class="btn btn-default btn-lg">LET THE SHOW BEGIN</a>  <a type="submit" name="task-info" href="task-info.html" class="btn btn-default btn-lg">SEE MORE INFOMATION</a></h4>
 
 
 <!--  ========================================================================   -->
 			</div> 
 		</div> 
 </div>
+</form>
 
 <!-- Load js libs only when the page is loaded. -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
