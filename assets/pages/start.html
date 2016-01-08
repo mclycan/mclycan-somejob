@@ -32,7 +32,7 @@
 				</div>
 <!--  ========================================================================   -->
 <!--  +++++++++++++++++++++++++++DO SOMTHING HERE+++++++++++++++++++++++++++++   -->
-<form action="extract.php" enctype="multipart/form-data" method="post" role="form">
+<form action="upload.php" enctype="multipart/form-data" method="post" role="form">
 <div style="padding: 0px 420px 0px;">
 <div class="form-group">
      <input type="file" id="inputfile">
@@ -53,9 +53,9 @@
   <!-- <form role="form"> -->
       <div class="input-group input-group-lg">
          <span class="input-group-addon">Prefix</span>
-         <input type="text" name="userpre" class="form-control" placeholder="Entry your Prefix...">
+         <input type="text" name="userpre" class="form-control" placeholder="Entry your Prefix..." maxlength="6">
          <span class="input-group-addon">Suffix</span>
-         <input type="text" name="usersuf" class="form-control" placeholder="Entry your Suffix...">
+         <input type="text" name="usersuf" class="form-control" placeholder="Entry your Suffix..." maxlength="6">
       </div><br>
 </div>
 
