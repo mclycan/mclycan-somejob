@@ -1,6 +1,6 @@
 <?php
-include_once("fileSystem.php");
-include_once("database.php");
+include_once("assets/functions/fileSystem.php");
+include_once("assets/functions/database.php");
 	if (empty($_POST)){
 		exit("error 1");
 	}
