@@ -2,13 +2,13 @@
 	$dataConnection = null;
 	function getConnection(){
 		$hostname = "localhost";
-		$database = "register";
+		$database = "userinfo";
 		$userName = "root";
-		$password = "";
+		$password = "123456";
 		global $dataConnection;
 		$dataConnection = @mysql_connect($hostname,$userName,$password) or die(mysql_error());
 		//mysql_query("set names 'gbk'");
-		mysql_query("set names 'utf8'");
+		//mysql_query("set names 'utf8'");
 		@mysql_select_db($database,$dataConnection) or die(mysql_error());
 	}
 	function closeConnection(){
