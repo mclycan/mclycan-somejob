@@ -5,7 +5,7 @@
 			case 0:
 				$filename = $file['name'];
 				$fileTemp = $file['tmp_name'];
-				$destination = "files"."/".$filePath."/".$filename;
+				$destination = $filePath."/".$filename;
 				$newdir = mkdir($filePath);
 
 				if($newdir){
