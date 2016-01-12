@@ -23,7 +23,7 @@ include_once("database.php");
     	echo "Size: " . ($_FILES["inputfile"]["size"] / 1024) . " Kb<br />";
    		echo "Temp file: " . $_FILES["inputfile"]["tmp_name"] . "<br />";
 		echo "Stored in: " . $mail ;
-		echo "/";
+		echo ""/"";
 		echo $_FILES["inputfile"]["name"] . "<br />";
 		echo "success! ". "<br />"; 
 	}else{
