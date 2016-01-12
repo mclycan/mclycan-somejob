@@ -8,7 +8,6 @@ include_once("database.php");
 	// 连接数据库  
 	getConnection();
 	
-	//采集信息
 	$filename = $_FILES["inputfile"]["name"];
 	$mail = $_POST['usermail'];
 	$time=date("Y-m-d H:i:s");
