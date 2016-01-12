@@ -12,7 +12,7 @@ echo <<<END
   <meta name="description" content="">
   <meta name="author"      content="Mclycan">
   
-  <title>Info - Brute Pool</title>
+  <title> Congratulation </title>
 
   <link rel="shortcut icon" href="../images/111.png">
   
@@ -61,6 +61,10 @@ END;
 	//断开数据库
 	closeConnection();
 
+
+
+echo <<<END
+
 <section class="section" id="head">
 	<div class="container">
 
@@ -80,8 +84,6 @@ END;
 	
 	</div>
 </section>
-
-echo <<<END
 </body>
 </html>
 
