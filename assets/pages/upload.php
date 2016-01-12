@@ -9,9 +9,9 @@ include_once("../functions/database.php");
 	getConnection();
 	
 	//采集信息
-	$filename = $_POST['inputfile']['name'];
+	$filename = $_FILES["inputfile"]["name"];
 	$mail = $_POST['usermail'];
-	$time=date("Y-m-d h:i:s");
+	$time=date("Y-m-d H:i:s");
 	//插入数据进入数据库的查询语句
 	$sqlstr = "insert into user(mail, uploadtime, filename) values('$mail','$time','$filename')";
 
