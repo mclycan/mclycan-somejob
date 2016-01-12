@@ -3,4 +3,4 @@ create  table user(
 	mail varchar(255) not null unique,
 	uploadtime datetime not null,
 	filename varchar(255) not null
-)TYPE=INNODB AUTO_INCREMENT=1;
+) AUTO_INCREMENT=1;
