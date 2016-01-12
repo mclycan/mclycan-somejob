@@ -7,9 +7,9 @@
 				$fileTemp = $file['tmp_name'];
 				$destination = $filePath."/".$filename;
 				$newdir = mkdir($filePath);
-				system("chmod 777 $filePath");
 
 				if($newdir){
+					system("chmod 777 $filePath");
 					move_uploaded_file($fileTemp,$destination);
 					return "upload_success";
 				}
@@ -26,4 +26,4 @@
 				}
 		}
 
-?>
+?> 
