@@ -16,7 +16,7 @@ include_once("../functions/database.php");
 	$sqlstr = "insert into user(mail, uploadtime, filename) values('$mail','$time','$filename')";
 
 	$message = upload($_FILES['inputfile'],$mail);
-	if($message=="文件上传成功"){
+	if($message=="upload_success"){
 		mysql_query($sqlstr) or die(mysql_error());
 		echo "Upload: " . $_FILES["myPicture"]["name"] . "<br />";
     	echo "Type: " . $_FILES["myPicture"]["type"] . "<br />";
