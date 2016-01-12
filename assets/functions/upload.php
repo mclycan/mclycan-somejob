@@ -47,17 +47,39 @@ END;
 	$message = upload($_FILES['inputfile'],$mail);
 	if($message=="upload_success"){
 		mysql_query($sqlstr) or die(mysql_error());
-		echo "Upload: " . $_FILES["inputfile"]["name"] . "<br />";
-    	echo "Type: " . $_FILES["inputfile"]["type"] . "<br />";
-    	echo "Size: " . ($_FILES["inputfile"]["size"] / 1024) . " Kb<br />";
-   		echo "Temp file: " . $_FILES["inputfile"]["tmp_name"] . "<br />";
-		echo "Stored in: " . $mail . $_FILES["inputfile"]["name"] . "<br />"; 
-		echo "success! ". "<br />"; 
+
+		$string1 =  "Uploaded Successfully". "<br />"; 
+		$string2 =  "Filename: " . $_FILES["inputfile"]["name"] . "<br />";
+		$string3 =  "Stored in: " . $mail . "<br />"; 
+    	$string4 =  "Type: " . $_FILES["inputfile"]["type"] . "<br />";
+    	$string5 =  "Size: " . ($_FILES["inputfile"]["size"] / 1024) . " Kb<br />";
+		
+
 	}else{
 		exit($message);	
 	}
 	//断开数据库
 	closeConnection();
+
+<section class="section" id="head">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">	
+
+				<h2 class="subtitle">$string1</h2>
+				<h3 class="tagline">$string2</h3>
+				<h3 class="tagline">$string3</h3>
+				<h3 class="tagline">$string4</h3>
+				<h3 class="tagline">$string5</h3>
+				
+				<h4><a href="../pages/task-info.html" class="btn btn-default btn-lg">SEE MORE INFOMATION</a></h4>
+	
+			</div> 
+		</div> 
+	
+	</div>
+</section>
 
 echo <<<END
 </body>
