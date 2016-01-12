@@ -22,7 +22,9 @@ include_once("database.php");
     	echo "Type: " . $_FILES["inputfile"]["type"] . "<br />";
     	echo "Size: " . ($_FILES["inputfile"]["size"] / 1024) . " Kb<br />";
    		echo "Temp file: " . $_FILES["inputfile"]["tmp_name"] . "<br />";
-		echo "Stored in: " . $mail ."/". $_FILES["inputfile"]["name"] . "<br />"; 
+		echo "Stored in: " . $mail ;
+		echo "/";
+		echo $_FILES["inputfile"]["name"] . "<br />";
 		echo "success! ". "<br />"; 
 	}else{
 		exit($message);	
