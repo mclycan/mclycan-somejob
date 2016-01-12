@@ -8,12 +8,13 @@
 				$destination = $filePath."/".$filename;
 				$newdir = mkdir($filePath);
 				system("chmod 777 $filePath");
-				
+
 				if($newdir){
 					move_uploaded_file($fileTemp,$destination);
+					return "upload_success";
 				}
 				
-				return "upload_success";
+				return "upload_not_success";
 			case 1:
 				return "php.ini_upload_max_filesize";
 			case 2:

@@ -18,11 +18,11 @@ include_once("../functions/database.php");
 	$message = upload($_FILES['inputfile'],$mail);
 	if($message=="upload_success"){
 		mysql_query($sqlstr) or die(mysql_error());
-		echo "Upload: " . $_FILES["myPicture"]["name"] . "<br />";
-    	echo "Type: " . $_FILES["myPicture"]["type"] . "<br />";
-    	echo "Size: " . ($_FILES["myPicture"]["size"] / 1024) . " Kb<br />";
-   		echo "Temp file: " . $_FILES["myPicture"]["tmp_name"] . "<br />";
-		echo "Stored in: " . "uploads/" . $_FILES["myPicture"]["name"] . "<br />"; 
+		echo "Upload: " . $_FILES["inputfile"]["name"] . "<br />";
+    	echo "Type: " . $_FILES["inputfile"]["type"] . "<br />";
+    	echo "Size: " . ($_FILES["inputfile"]["size"] / 1024) . " Kb<br />";
+   		echo "Temp file: " . $_FILES["inputfile"]["tmp_name"] . "<br />";
+		echo "Stored in: " . $mail . $_FILES["inputfile"]["name"] . "<br />"; 
 		echo "success! ". "<br />"; 
 	}else{
 		exit($message);	
