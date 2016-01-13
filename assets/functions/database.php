@@ -17,4 +17,9 @@
 			mysql_close($databaseconnection)or die(mysql_error());
 		}
 	}
+	function queryMysql($query)
+	{
+    	$result = mysql_query($query) or die(mysql_error());
+	 	return $result;
+	}
 ?>

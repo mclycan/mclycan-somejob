@@ -1,4 +1,5 @@
 <?php
+include_once("../functions/database.php");
 
 echo <<<END
 
@@ -32,45 +33,53 @@ echo <<<END
         <br><br>  
         <h1 class="title">TASK INFO</h1>
 
-<form name="form1" method="post" action="test.html">
+<form name="form1" method="post" action="test.php">
 <input type="submit" name="submit" class="btn btn-default btn-lg" value="REFRESH"/>
 </form>
 
       </div> 
     </div>
- </div>   
+ </div>  
 
-  <table class="table">
+   <table class="table">
     <thead>
       <tr>
         <th>ID</th>
         <th>E-Mail</th>
         <th>Upload Time</th>
         <th>Filename</th>
-        </tr>
+      </tr>
     </thead>
     <tbody>
+ 
+END;
 
+  getConnection();
+  $result = queryMysql(" SELECT * from user ORDER BY userid ");
+  $num = mysql_num_rows($result);
+
+  for ($j = 0 ; $j < $num ; ++$j)
+  {
+    $row = mysql_fetch_row($result);
+
+echo <<<END
 
       <tr>
         <td>$row[0]</td>
         <td>$row[1]</td>
         <td>$row[2]</td>
         <td>$row[3]</td>
-        <td>
-              <a href="edituser.php?account=$row[0]"><i class="icon-pencil"></i></a>
-              <a href="deleteuser.php?account=$row[0]"><i class="icon-remove"></i></a>
-              <!--<a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>-->
-        </td>
       </tr>
+END;
+    
+  }
 
-
-
-
+echo <<<END
     </tbody>
   </table>
 </body>
 </html>
 
 END;
+  closeConnection();
 ?>
