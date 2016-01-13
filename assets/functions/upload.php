@@ -1,5 +1,5 @@
 <?php
-session_start ();
+#session_start ();
 include_once("fileSystem.php");
 include_once("database.php");
 
@@ -69,7 +69,7 @@ echo <<<END
 	<div class="container">
 
 		<div class="row">
-			<div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">	
+			<!-- <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">	-->
 
 				<h2 class="subtitle">$string1</h2>
 				<h3 class="tagline">$string2</h3>
@@ -79,7 +79,7 @@ echo <<<END
 				
 				<h4><a href="../pages/task-info.html" class="btn btn-default btn-lg">SEE MORE INFOMATION</a></h4>
 	
-			</div> 
+			<!--  </div>  -->
 		</div> 
 	
 	</div>

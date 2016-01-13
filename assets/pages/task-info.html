@@ -1,8 +1,8 @@
 <?php
-// 连接数据库  
-$conn=@mysql_connect("localhost","root","123456")  or die(mysql_error());  
-@mysql_select_db('task',$conn) or die(mysql_error());  
-?>
+include_once("../functions/database.php");
+
+echo <<<END
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,11 +34,10 @@ $conn=@mysql_connect("localhost","root","123456")  or die(mysql_error());
 			<div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">	
 				<div style="padding: 50px ;">
 				<h2 class="title">TASK INFO</h2>
-				<h4>You can see your task rank here...</h4>
 				</div>
 <!--  ========================================================================   -->
 <!--  +++++++++++++++++++++++++++DO SOMTHING HERE+++++++++++++++++++++++++++++   -->
-<form name="form1" method="post" action="index.php">
+<form name="form1" method="post" action="task-info.html">
 <input type="submit" name="submit" class="btn btn-default btn-lg" value="REFRESH"/>
 </form>
 
@@ -55,8 +54,11 @@ $conn=@mysql_connect("localhost","root","123456")  or die(mysql_error());
 <!-- Custom template scripts -->
 <script src="assets/js/magister.js"></script>
 
-<?php
-	$sqlstr = "select * from type_1 order by id";
+END;
+
+	getConnection();
+
+	$sqlstr = "select * from user order by userid";
 	$query = mysql_query($sqlstr) or die(mysql_error());
 	$result = array();
 	while($thread=mysql_fetch_assoc($query)){
@@ -64,22 +66,46 @@ $conn=@mysql_connect("localhost","root","123456")  or die(mysql_error());
 	}
 				 
 	if($result){
-		#echo '<table>';
-		#echo '<th>NO</th><th>tx_hash</th><th>address</th><th>amount</th><th>complete</th><th>block_no</th>';
-		#foreach($result as $row){
-			#echo '<tr>';
-			#echo '<td>'.$row['id'].'</td>';
-			#echo '<td>'.$row['tx_hash'].'</td>';
-			#echo '<td>'.$row['address'].'</td>';
-			#echo '<td>'.$row['amount'].'</td>';
-			#echo '<td>'.$row['complete'].'</td>';
-			#echo '<td>'.$row['block_no'].'</td>';
-			#echo '</tr>';
-		#}
-		#echo '</table>';
-	}
-					 
-?>
+		
+echo <<<END
 
+		<table class="table">
+   			<caption>Task Info</caption>
+   			<thead>
+      			<tr>
+         			<th>ID</th>
+         			<th>E-Mail</th>
+         			<th>Upload Time</th>
+         			<th>Filename</th>
+      			</tr>
+   			</thead>
+   			<tbody>
+      			<tr>
+         			<td>$row['userid']</td>
+      			</tr>
+      			<tr>
+         			<td>$row['mail']</td>
+      			</tr>
+      			<tr>
+         			<td>$row['uploadtime']</td>
+      			</tr>
+      			<tr>
+         			<td>$row['filename']</td>
+      			</tr>
+   			</tbody>
+		</table>
+END;
+	}
+	else{
+echo <<<END
+		<h4>Some Thing Wrong</h4>
+END;
+	}
+	closeConnection();
+
+echo <<<END
 </body>
 </html>
+END; 
+
+?>
