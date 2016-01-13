@@ -77,7 +77,7 @@ echo <<<END
 				<h3>$string4</h3>
 				<h3>$string5</h3>
 				
-				<h4><a href="../pages/task-info.html" class="btn btn-default btn-lg">SEE MORE INFOMATION</a></h4>
+				<h4><a href="../pages/taskinfo.php" class="btn btn-default btn-lg">SEE MORE INFOMATION</a></h4>
 	
 			  </div>  
 		</div> 
