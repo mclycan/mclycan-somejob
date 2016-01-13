@@ -68,10 +68,10 @@ END;
 		foreach($result as $row){
 echo <<<END	
 		    <tr>
-		        <td>$row['userid']</td>
-		        <td>$row['mail']</td>
-		        <td>$row['uploadtime']</td>
-		        <td>$row['filename']</td>
+		        <td>$row[0]</td>
+		        <td>$row[1]</td>
+		        <td>$row[2]</td>
+		        <td>$row[3]</td>
 		    </tr>
 END;		   			
 		}
