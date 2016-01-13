@@ -1,4 +1,5 @@
 <?php
+include_once("database.php");
 
 echo <<<END
 
@@ -26,13 +27,22 @@ echo <<<END
 </head>
 
 <body class="text-shadows">
+END;
+	getConnection();
 
+	$sqlstr = "select * from user order by userid";
+	$query = mysql_query($sqlstr) or die(mysql_error());
+	$result = array();
+	while($thread=mysql_fetch_assoc($query)){
+		$result[] = $thread;
+	}
+
+echo <<<END	
 <div class="container">
 		<div class="row">
 			<div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">	
-				<div style="padding: 50px ;">
-				<h2>TASK INFO</h2>
-				</div>
+				<br><br>	
+				<h1 class="title">TASK INFO</h1>
 
 <form name="form1" method="post" action="task-info.php">
 <input type="submit" name="submit" class="btn btn-default btn-lg" value="REFRESH"/>
@@ -40,7 +50,44 @@ echo <<<END
 
 			</div> 
 		</div>
+END;
 
+	if($result){
+echo <<<END	
+	<table class="table">
+   			<thead>
+      			<tr>
+         			<th>ID</th>
+         			<th>E-Mail</th>
+         			<th>Upload Time</th>
+         			<th>Filename</th>
+      			</tr>
+   			</thead>
+   			<tbody>
+      			<tr>
+         			<td>$row['userid']</td>
+      			</tr>
+      			<tr>
+         			<td>$row['mail']</td>
+      			</tr>
+      			<tr>
+         			<td>$row['uploadtime']</td>
+      			</tr>
+      			<tr>
+         			<td>$row['filename']</td>
+      			</tr>
+   			</tbody>
+		</table>
+END;
+	}
+	else{
+echo <<<END
+		<h1>Some Thing Wrong</h1>
+END;
+	}
+	closeConnection();
+
+echo <<<END
 </div>
 </body>
 </html>
