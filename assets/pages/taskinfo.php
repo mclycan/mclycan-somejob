@@ -54,30 +54,35 @@ END;
 
 	if($result){
 echo <<<END	
-	<table class="table">
-   			<thead>
-      			<tr>
-         			<th>ID</th>
-         			<th>E-Mail</th>
-         			<th>Upload Time</th>
-         			<th>Filename</th>
-      			</tr>
-   			</thead>
-   			<tbody>
-      			<tr>
-         			<td>$row['userid']</td>
-         			<td>$row['mail']</td>
-         			<td>$row['uploadtime']</td>
-         			<td>$row['filename']</td>
-      			</tr>
-   			</tbody>
-		</table>
+		<table class="table">
+		   	<thead>
+		    <tr>
+		        <th>ID</th>
+		        <th>E-Mail</th>
+		        <th>Upload Time</th>
+		        <th>Filename</th>
+		      	</tr>
+		   		</thead>
+		   	<tbody>
+END;
+		foreach($result as $row){
+echo <<<END	
+		    <tr>
+		        <td>$row['userid']</td>
+		        <td>$row['mail']</td>
+		        <td>$row['uploadtime']</td>
+		        <td>$row['filename']</td>
+		    </tr>
+END;		   			
+		}
+echo <<<END	
+				</tbody>
+			</table>
 END;
 	}
 	else{
-echo <<<END
-		<h1>Some Thing Wrong</h1>
-END;
+
+		echo "ERROR". "<br />";
 	}
 	closeConnection();
 
