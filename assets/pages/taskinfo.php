@@ -1,5 +1,5 @@
 <?php
-include_once("../functions/database.php");
+include("../functions/database.php");
 
 echo <<<END
 
@@ -27,17 +27,7 @@ echo <<<END
 </head>
 
 <body class="text-shadows">
-END;
-	getConnection();
 
-	$sqlstr = "select * from user order by userid";
-	$query = mysql_query($sqlstr) or die(mysql_error());
-	$result = array();
-	while($thread=mysql_fetch_assoc($query)){
-		$result[] = $thread;
-	}
-
-echo <<<END	
 <div class="container">
 		<div class="row">
 			<div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">	
@@ -50,7 +40,17 @@ echo <<<END
 
 			</div> 
 		</div>
+		
 END;
+	getConnection();
+
+	$sqlstr = "select * from user order by userid";
+	$query = mysql_query($sqlstr) or die(mysql_error());
+	$result = array();
+	while($thread=mysql_fetch_assoc($query)){
+		$result[] = $thread;
+	}
+
 
 	if($result){
 echo <<<END	
