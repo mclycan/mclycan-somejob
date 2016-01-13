@@ -50,7 +50,7 @@ END;
 
 		$string1 =  "Uploaded Successfully". "<br />"; 
 		$string2 =  "Filename: " . $_FILES["inputfile"]["name"] . "<br />";
-		$string3 =  "Stored in: " . $mail . "<br />"; 
+		$string3 =  "Stored in Directory: " . $mail . "<br />"; 
     	$string4 =  "Type: " . $_FILES["inputfile"]["type"] . "<br />";
     	$string5 =  "Size: " . ($_FILES["inputfile"]["size"] / 1024) . " Kb<br />";
 		
@@ -69,17 +69,17 @@ echo <<<END
 	<div class="container">
 
 		<div class="row">
-			<!-- <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">	-->
+			 <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">	
 
 				<h2 class="subtitle">$string1</h2>
-				<h3 class="tagline">$string2</h3>
-				<h3 class="tagline">$string3</h3>
-				<h3 class="tagline">$string4</h3>
-				<h3 class="tagline">$string5</h3>
+				<h3>$string2</h3>
+				<h3>$string3</h3>
+				<h3>$string4</h3>
+				<h3>$string5</h3>
 				
 				<h4><a href="../pages/task-info.html" class="btn btn-default btn-lg">SEE MORE INFOMATION</a></h4>
 	
-			<!--  </div>  -->
+			  </div>  
 		</div> 
 	
 	</div>
