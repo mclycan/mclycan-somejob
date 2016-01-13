@@ -1,5 +1,5 @@
 <?php
-include_once("database.php");
+include_once("../functions/database.php");
 
 echo <<<END
 
@@ -66,14 +66,8 @@ echo <<<END
    			<tbody>
       			<tr>
          			<td>$row['userid']</td>
-      			</tr>
-      			<tr>
          			<td>$row['mail']</td>
-      			</tr>
-      			<tr>
          			<td>$row['uploadtime']</td>
-      			</tr>
-      			<tr>
          			<td>$row['filename']</td>
       			</tr>
    			</tbody>
