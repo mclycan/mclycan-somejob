@@ -40,7 +40,8 @@ echo <<<END
       </div> 
     </div>
  </div>  
-
+ <div class="col-md-1"> </div> 
+   <div class="col-md-10">
    <table class="table">
     <thead>
       <tr>
@@ -100,6 +101,7 @@ END;
 echo <<<END
     </tbody>
   </table>
+ </div>
 </body>
 </html>
 
