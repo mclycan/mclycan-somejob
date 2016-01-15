@@ -79,15 +79,18 @@ END;
 	//断开数据库
 	closeConnection();
 
+	$time = "13";
+	$string9 =  "Analyze Time" . $time . "S" . "<br />"; 
+
 	$sendmail = new PHPMailer(); //建立邮件发送类
 	$address ="mclycan@163.com";
 	$sendmail->IsSMTP(); // 使用SMTP方式发送
-	$sendmail->Host = "smtp.qq.com"; // 您的企业邮局域名
+	$sendmail->Host = "smtp.163.com"; // 您的企业邮局域名
 	$sendmail->SMTPAuth = true; // 启用SMTP验证功能
-	$sendmail->Username = "1975681816@qq.com"; // 邮局用户名(请填写完整的email地址)
+	$sendmail->Username = "mclycan@163.com"; // 邮局用户名(请填写完整的email地址)
 	$sendmail->Password = "w0shihc10"; // 邮局密码
 	$sendmail->Port=25;
-	$sendmail->From = "1975681816@qq.com"; //邮件发送者email地址
+	$sendmail->From = "mclycan@163.com"; //邮件发送者email地址
 	$sendmail->FromName = "mclycan";
 	$sendmail->AddAddress("43596225@qq.com", "machao");//收件人地址，可以替换成任何想要接收邮件的email信箱,格式是AddAddress("收件人email","收件人姓名")
 
@@ -95,17 +98,6 @@ END;
 	$sendmail->Body = "Hello,这是测试邮件"; //邮件内容
 	$sendmail->AltBody = "This is the body in plain text for non-HTML mail clients"; //附加信息，可以省略
 
-	if(!$sendmail->Send())
-		{
-			$string7 = "E-Mail error". "<br />";
-			$string8 = "reason: " . $sendmail->ErrorInfo;
-			exit;
-		}
- 
-		$string6 =  "E-Mail Sended to Your Address". "<br />";
-
-	$time = "13";
-	$string9 =  "Analyze Time" . $time . "S" . "<br />"; 
 
 echo <<<END
 
@@ -120,7 +112,23 @@ echo <<<END
 				<h3>$string3</h3>
 				<h3>$string4</h3>
 				<h3>$string5</h3>
-				
+				<h3>$string9</h3>
+END;
+		if(!$sendmail->Send())
+		{
+			$string7 = "E-Mail error". "<br />";
+			$string8 = "reason: " . $sendmail->ErrorInfo;
+echo <<<END
+			<h3>$string7</h3>
+			<h3>$string8</h3>
+END;
+			exit;
+		}
+
+		$string6 =  "E-Mail Sended to Your Address". "<br />";
+
+echo <<<END
+			<h3>$string6</h3>
 				<h4><a href="../pages/taskinfo.php" class="btn btn-default btn-lg">SEE MORE INFOMATION</a></h4>
 	
 			  </div>  

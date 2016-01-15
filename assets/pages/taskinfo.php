@@ -66,7 +66,7 @@ END;
   for ($j = 0 ; $j < $num ; ++$j)
   {
     $k = $j + 1;
-    $row = mysql_fetch_row($result);
+    $row = mysql_fetch_row($result1);
 
     $sqlstr2 = "select count(*) from subtask where subtask.taskid = $k" ;
     $result2 = queryMysql($sqlstr2);
