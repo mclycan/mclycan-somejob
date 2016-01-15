@@ -79,8 +79,8 @@ END;
 	//断开数据库
 	closeConnection();
 
-	$time = "13";
-	$string9 =  "Analyze Time" . $time . "S" . "<br />"; 
+	//$time = "118";
+	//$string9 =  "Analyze Time" . $time . "S" . "<br />"; 
 
 	$sendmail = new PHPMailer(); //建立邮件发送类
 	$address ="mclycan@163.com";
@@ -112,7 +112,6 @@ echo <<<END
 				<h3>$string3</h3>
 				<h3>$string4</h3>
 				<h3>$string5</h3>
-				<h3>$string9</h3>
 END;
 		if(!$sendmail->Send())
 		{

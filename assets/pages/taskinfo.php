@@ -58,7 +58,7 @@ END;
 
   getConnection();
 
-  $sqlstr1 = "select user.mail, user.uploadtime, task.createtime, task.finishtime from user ,task where user.userid = task.userid ORDER BY user.userid" ;
+  $sqlstr1 = "select user.mail, user.uploadtime, task.begintime, task.finishtime from user ,task where user.userid = task.userid ORDER BY user.userid" ;
   $result1 = queryMysql($sqlstr1);
 
 

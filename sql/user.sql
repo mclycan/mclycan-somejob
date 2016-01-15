@@ -67,6 +67,8 @@ values("test2", "test2", "test2", "test2", 1, 4, " ", " ", "2016-01-13 16:17:33"
 insert into task(salt, encrypted_masterkey, encrypted_seckey, pubkey, minlen, maxlen, prefix, suffix, createtime, begintime, finishtime, status, userid) 
 values("test3", "test3", "test3", "test3", 3, 5, " ", " ", "2016-01-13 18:43:56", " ", " ", 0, 3);
 
+insert into task(salt, encrypted_masterkey, encrypted_seckey, pubkey, minlen, maxlen, prefix, suffix, createtime, begintime, finishtime, status, userid) 
+values("test3", "test3", "test3", "test3", 5, 8, " ", " ", "2016-01-15 13:43:56", " ", " ", 0, 6);
 
 
 insert into subtask(prefix, suffix, minlen, maxlen, starttime, finshtime, status, taskid) 
@@ -232,6 +234,9 @@ values("a", "z", 3, 5, "2016-01-13 18:43:56", "2016-01-13 18:43:56", 0, 3);
 insert into subtask(prefix, suffix, minlen, maxlen, starttime, finshtime, status, taskid) 
 values("a", "z", 3, 5, "2016-01-13 18:43:56", "2016-01-13 18:43:56", 0, 3);
 
+insert into subtask(prefix, suffix, minlen, maxlen, starttime, finshtime, status, taskid) 
+values("kobe", "!", 5, 8, "", "", 0, 6);
+
 
 
 
@@ -245,3 +250,12 @@ select count(*) from subtask where subtask.taskid = 1;
 
 # 完成子任务数
 select count(*) from subtask where subtask.taskid = 1 and status = 2;
+
+
+UPDATE task
+SET createtime = "2016-01-13 15:59:13"
+WHERE taskid = 2;
+
+UPDATE task
+SET createtime = "2016-01-13 15:01:27"
+WHERE taskid = 3;
