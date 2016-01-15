@@ -1,5 +1,4 @@
 <?php
-include_once("../functions/database.php");
 
 echo <<<END
 
@@ -39,47 +38,54 @@ echo <<<END
 
       </div> 
     </div>
- </div>  
-
+ </div> 
+  <div class="col-md-1"> </div> 
+   <div class="col-md-10">
    <table class="table">
     <thead>
       <tr>
-        <th>ID</th>
-        <th>E-Mail</th>
-        <th>Upload Time</th>
-        <th>Filename</th>
+        <td>ID</th>
+        <td>E-Mail</th>
+        <td>Upload Time</th>
+        <td>Filename</th>
+        <td>Progress</th>
       </tr>
     </thead>
     <tbody>
  
-END;
-
-  getConnection();
-  $result = queryMysql(" SELECT * from user ORDER BY userid ");
-  $num = mysql_num_rows($result);
-
-  for ($j = 0 ; $j < $num ; ++$j)
-  {
-    $row = mysql_fetch_row($result);
-
-echo <<<END
 
       <tr>
-        <td>$row[0]</td>
-        <td>$row[1]</td>
-        <td>$row[2]</td>
-        <td>$row[3]</td>
+        <td>11</td>
+        <td>22</td>
+        <td>33</td>
+        <td>44</td>
+        <td>
+            <div class="progress progress-striped">
+              <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" 
+                  aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+              </div>
+            </div>
+        </td>
+        </tr>
+        <tr>
+        <td>111</td>
+        <td>222</td>
+        <td>333</td>
+        <td>444</td>
+        <td>
+            <div class="progress progress-striped">
+              <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 40.99%;">
+              </div>
+            </div>
+        </td>
       </tr>
-END;
-    
-  }
 
-echo <<<END
     </tbody>
   </table>
+</div>
 </body>
 </html>
 
 END;
-  closeConnection();
+
 ?>

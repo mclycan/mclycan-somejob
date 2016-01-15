@@ -44,10 +44,11 @@ echo <<<END
    <table class="table">
     <thead>
       <tr>
-        <th>ID</th>
-        <th>E-Mail</th>
-        <th>Upload Time</th>
-        <th>Filename</th>
+        <th>User</th>
+        <th>Upload-Time</th>
+        <th>Start-Time</th>
+        <th>Finish-Time</th>
+        <th>Schedule</th>
       </tr>
     </thead>
     <tbody>
@@ -55,12 +56,27 @@ echo <<<END
 END;
 
   getConnection();
-  $result = queryMysql(" SELECT * from user ORDER BY userid ");
-  $num = mysql_num_rows($result);
+
+  $sqlstr1 = "select user.mail, user.uploadtime, task.createtime, task.finishtime from user ,task where user.userid = task.userid ORDER BY user.userid" ;
+  $result1 = queryMysql($sqlstr1);
+
+
+  $num = mysql_num_rows($result1);
 
   for ($j = 0 ; $j < $num ; ++$j)
   {
+    $k = $j + 1;
     $row = mysql_fetch_row($result);
+
+    $sqlstr2 = "select count(*) from subtask where subtask.taskid = $k" ;
+    $result2 = queryMysql($sqlstr2);
+    $row2 = mysql_fetch_row($result2);
+
+    $sqlstr3 = "select count(*) from subtask where subtask.taskid = $k and status = 2" ;
+    $result3 = queryMysql($sqlstr3);
+    $row3 = mysql_fetch_row($result3);
+
+    $rate = round(($row3[0]/$row2[0])*100).'%';
 
 echo <<<END
 
@@ -69,6 +85,13 @@ echo <<<END
         <td>$row[1]</td>
         <td>$row[2]</td>
         <td>$row[3]</td>
+        <td>
+            <div class="progress progress-striped">
+              <div class="progress-bar progress-bar-warning" role="progressbar" 
+                  aria-valuemin="0" aria-valuemax="100" style="width: $rate;">
+              </div>
+            </div>
+        </td>
       </tr>
 END;
     

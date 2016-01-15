@@ -2,6 +2,7 @@
 #session_start ();
 include_once("fileSystem.php");
 include_once("database.php");
+require("class.phpmailer.php");
 
 echo <<<END
 <!DOCTYPE html>
@@ -48,12 +49,11 @@ END;
 	if($message=="upload_success"){
 		mysql_query($sqlstr) or die(mysql_error());
 
-		$string1 =  "Uploaded Successfully". "<br />"; 
+		$string1 =  "Uploaded and Analysed Successfully". "<br />"; 
 		$string2 =  "Filename: " . $_FILES["inputfile"]["name"] . "<br />";
 		$string3 =  "Stored in Directory: " . $mail . "<br />"; 
     	$string4 =  "Type: " . $_FILES["inputfile"]["type"] . "<br />";
     	$string5 =  "Size: " . ($_FILES["inputfile"]["size"] / 1024) . " Kb<br />";
-		
 
 	}else{
 
@@ -79,7 +79,33 @@ END;
 	//断开数据库
 	closeConnection();
 
+	$sendmail = new PHPMailer(); //建立邮件发送类
+	$address ="mclycan@163.com";
+	$sendmail->IsSMTP(); // 使用SMTP方式发送
+	$sendmail->Host = "smtp.qq.com"; // 您的企业邮局域名
+	$sendmail->SMTPAuth = true; // 启用SMTP验证功能
+	$sendmail->Username = "1975681816@qq.com"; // 邮局用户名(请填写完整的email地址)
+	$sendmail->Password = "w0shihc10"; // 邮局密码
+	$sendmail->Port=25;
+	$sendmail->From = "1975681816@qq.com"; //邮件发送者email地址
+	$sendmail->FromName = "mclycan";
+	$sendmail->AddAddress("43596225@qq.com", "machao");//收件人地址，可以替换成任何想要接收邮件的email信箱,格式是AddAddress("收件人email","收件人姓名")
 
+	$sendmail->Subject = "PHPMailer测试邮件"; //邮件标题
+	$sendmail->Body = "Hello,这是测试邮件"; //邮件内容
+	$sendmail->AltBody = "This is the body in plain text for non-HTML mail clients"; //附加信息，可以省略
+
+	if(!$sendmail->Send())
+		{
+			$string7 = "E-Mail error". "<br />";
+			$string8 = "reason: " . $sendmail->ErrorInfo;
+			exit;
+		}
+ 
+		$string6 =  "E-Mail Sended to Your Address". "<br />";
+
+	$time = "13";
+	$string9 =  "Analyze Time" . $time . "S" . "<br />"; 
 
 echo <<<END
 
