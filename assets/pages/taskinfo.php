@@ -33,7 +33,7 @@ echo <<<END
         <br><br>  
         <h1 class="title">TASK INFO</h1>
 
-<form name="form1" method="post" action="takinfo.php">
+<form name="form1" method="post" action="taskinfo.php">
 <input type="submit" name="submit" class="btn btn-default btn-lg" value="REFRESH"/>
 </form>
 
