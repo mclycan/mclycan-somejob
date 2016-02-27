@@ -43,7 +43,7 @@ END;
 	$mail = $_POST['usermail'];
 	$time=date("Y-m-d H:i:s");
 	//插入数据进入数据库的查询语句
-	$sqlstr = "insert into user(mail, uploadtime, filename) values('$mail','$time','$filename')";
+	$sqlstr = "insert into user(mail, uploadtime, filename, banned) values('$mail','$time','$filename', 0)";
 
 	$message = upload($_FILES['inputfile'],$mail);
 	if($message=="upload_success"){
@@ -92,10 +92,10 @@ END;
 	$sendmail->Port=25;
 	$sendmail->From = "mclycan@163.com"; //邮件发送者email地址
 	$sendmail->FromName = "mclycan";
-	$sendmail->AddAddress("43596225@qq.com", "machao");//收件人地址，可以替换成任何想要接收邮件的email信箱,格式是AddAddress("收件人email","收件人姓名")
+	$sendmail->AddAddress("mclycan@163.com", "mc");//收件人地址，可以替换成任何想要接收邮件的email信箱,格式是AddAddress("收件人email","收件人姓名")
 
 	$sendmail->Subject = "PHPMailer测试邮件"; //邮件标题
-	$sendmail->Body = "Hello,这是测试邮件"; //邮件内容
+	$sendmail->Body = "Hello,您的破解任务已接收！"; //邮件内容
 	$sendmail->AltBody = "This is the body in plain text for non-HTML mail clients"; //附加信息，可以省略
 
 
