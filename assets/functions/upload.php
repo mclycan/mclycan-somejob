@@ -67,8 +67,13 @@ END;
 
     	//$row = mysql_fetch_row($result1);
 
+    	$select_userid = "select userid from user where mail = '" . $mail . "' and filename = '" . $filename . "' limit 1";
+    	$result1 = queryMysql($select_userid);
+    	$row = mysql_fetch_row($result1);
+
+
     	$time2 = date("Y-m-d H:i:s");
-    	$insert_task = "insert into task(minlen, maxlen, prefix, suffix, createtime, userid) values('$min','$max','$pre', '$suf', '$time2', 1)";
+    	$insert_task = "insert into task(minlen, maxlen, prefix, suffix, createtime, userid) values('$min','$max','$pre', '$suf', '$time2', " . $row[0] . ")";
 
     	mysql_query($insert_task) or die(mysql_error());
 

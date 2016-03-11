@@ -123,6 +123,16 @@ int get_wallet_info(char *filename)
   return(0);
 }
 
+char *GetFilename(char *p)
+{
+  int x = strlen(p);
+  char ch = '\/';
+  //char ch = '\\';
+  char *q = strrchr(p, ch) + 1;
+
+  return q;
+}
+
 
 int main(int argc, char **argv)
 {
@@ -131,6 +141,7 @@ int main(int argc, char **argv)
   int res, i;
   unsigned char sql_insert[920];
   int len;
+  char *real_filename;
 
  
   if(optind >= argc)
@@ -151,6 +162,9 @@ int main(int argc, char **argv)
       fprintf(stderr, "Error: couldn't find required info in wallet.\n\n");
       exit(EXIT_FAILURE);
     }
+
+ // 取出不含有路径的文件名
+ real_filename = GetFilename(filename);
 
   //encode
  base64_pkey = malloc(100);
@@ -174,23 +188,24 @@ int main(int argc, char **argv)
     
     if (mysql_real_connect(&my_connection, "localhost", "root", "123456", "A", 0, NULL, 0)) 
     {
-        printf("Connection success...\n");
+        //printf("Connection success...\n");
 
         sprintf(sql_insert
         ,"UPDATE task SET salt = '%s', encrypted_masterkey = '%s', encrypted_seckey = '%s', pubkey = '%s', \
-          rounds = '%d', status = 0, analysis = 0 where taskid = 1"
+          rounds = '%d', status = 0, analysis = 0 where filename = '%s'"
         ,base64_salt
         ,base64_encrypted_masterkey
         ,base64_encrypted_seckey
         ,base64_pkey
-        ,rounds);
+        ,rounds
+        ,real_filename);
 
         res = mysql_query(&my_connection, sql_insert);
 
         if (!res) 
         {
-            printf("Insert %lu rows success...\n", (unsigned long)mysql_affected_rows(&my_connection));
-            printf("You can goto your database to check result...\n");
+            //printf("Insert %lu rows success...\n", (unsigned long)mysql_affected_rows(&my_connection));
+            //printf("You can goto your database to check result...\n");
         } 
         else 
         {
@@ -217,3 +232,5 @@ int main(int argc, char **argv)
 
     return EXIT_SUCCESS;
 }
+
+//gcc -I/usr/include/mysql -I/usr/local/BerkeleyDB.4.8/include -I/usr/local/include Extractinfo.c  -L/usr/lib/mysql -lmysqlclient -L/usr/local/BerkeleyDB.4.8/lib -ldb-4.8 -L/usr/local/lib -lcrypto -lssl -ldl -o Extractinfo
