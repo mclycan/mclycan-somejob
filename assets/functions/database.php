@@ -2,7 +2,7 @@
 	$dataConnection = null;
 	function getConnection(){
 		$hostname = "localhost";
-		$database = "userinfo";
+		$database = "A";
 		$userName = "root";
 		$password = "123456";
 		global $dataConnection;

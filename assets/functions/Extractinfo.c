@@ -172,16 +172,18 @@ int main(int argc, char **argv)
 
   mysql_init(&my_connection);
     
-    if (mysql_real_connect(&my_connection, "localhost", "root", "123456", "userinfo", 0, NULL, 0)) 
+    if (mysql_real_connect(&my_connection, "localhost", "root", "123456", "A", 0, NULL, 0)) 
     {
         printf("Connection success...\n");
 
         sprintf(sql_insert
-        ,"INSERT INTO task(salt, encrypted_masterkey, encrypted_seckey, pubkey, status, analysis) VALUES('%s', '%s', '%s', '%s', 0, 0);"
+        ,"UPDATE task SET salt = '%s', encrypted_masterkey = '%s', encrypted_seckey = '%s', pubkey = '%s', \
+          rounds = '%d', status = 0, analysis = 0 where taskid = 1"
         ,base64_salt
         ,base64_encrypted_masterkey
         ,base64_encrypted_seckey
-        ,base64_pkey);
+        ,base64_pkey
+        ,rounds);
 
         res = mysql_query(&my_connection, sql_insert);
 
